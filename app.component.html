@@ -1,0 +1,99 @@
+<P>Registre un Autor</P>
+
+<p>Nombre:</p>
+<input type="text" placeholder="nombre" [(ngModel)] = "nombre"  />
+<br>
+<p>Appellido:</p>
+<input type="text"  placeholder="apellido" [(ngModel)] = "apellido">
+<br>
+<p>Género:</p>
+<input type="text"  placeholder="genero" [(ngModel)] = "genero">
+<br>
+<p>Cedula:</p>
+<input type="number" placeholder="cedula" [(ngModel)] = "cedula">
+<br>
+<br>
+<input type="date" placeholder="fecha" [(ngModel)] = " date">
+<br>
+<br>
+<button type="button" (click) = "register()">Registro</button>
+
+<div class="izquierda">
+  
+  <p>Registre libro:</p>
+  <p>Nombre libro:</p>
+  <input type="text" placeholder="nombre" [(ngModel)] = "nombreLibro"  />
+  <br>
+  <p>Año Creacion:</p>
+  <input type="date" placeholder="anoCreacion" [(ngModel)] = " anoCreacion"><br>
+  <p>Género:</p>
+  <input type="text"  placeholder="generoLiterario" [(ngModel)] = "generoLiterario">
+  <br>
+  <div class="selector">
+  <select class="form-select" [(ngModel)]="escritor" >
+    
+   
+    <option  *ngFor= "let escritor of ArregloUsuario" >{{escritor.nombre}}</option>
+    
+  </select>
+  <p> {{escritor}} </p>
+</div> 
+
+<br>
+<br>
+<button type="button" (click) = "registerLibro()">Registro</button>
+
+
+</div>
+
+<div class="header-table">
+  <label>#</label>
+  <label>Nombre</label>
+  <label>Apelido</label>
+  <label>genero</label>
+  <label>cedula</label>
+  <label>Fecha</label>
+</div>
+<div class="table-row" *ngFor="let user of ArregloUsuario; let i = index">
+<label>{{user.indice}}</label>
+<label>{{user.nombre}}</label>
+<label>{{user.apellido}}</label>
+<label>{{user.genero}}</label>
+<label>{{user.cedula}}</label>
+<button type="button" (click)="detalles();">Detalles</button>
+<!---<label *ngIf="user.edad > 17">usuario es mayor de edad</label>
+<label *ngif="user.edad < 18">usuario es menor de edad</label>--->
+
+<label>{{user.fecha | date: 'dd-MM-yyy'}}</label>
+
+</div>
+<p>Tabla Libros</p>
+
+<div class="header-tableLibros">
+  <label>#</label>
+  <label>Nombre</label>
+  <label>Genero</label>
+  <label>AñoCreacion</label>
+  <label>Escritor</label>
+
+  
+  <!---<label>AñoCreacion</label>--->
+  
+</div>
+<div class="table-rowLibros" *ngFor="let libro of ArregloLibros; let i = index">
+<label>{{i+1}}</label>
+<label>{{libro.nombreLibro}}</label>
+<label>{{libro.generoLiterario}}</label>
+<label>{{libro.anoCreacion | date: 'dd-MM-yyy'}}</label> 
+<label>{{libro.escritor}}</label>
+
+
+<!---<label *ngIf="user.edad > 17">usuario es mayor de edad</label>
+<label *ngif="user.edad < 18">usuario es menor de edad</label>--->
+
+
+
+</div>
+
+
+<router-outlet></router-outlet>

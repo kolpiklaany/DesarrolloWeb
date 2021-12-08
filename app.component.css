@@ -1,0 +1,40 @@
+.header-table {
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+  }
+  
+  .table-row {
+    padding: 10px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+  }
+  
+  .izquierda{
+
+    position: absolute;
+    top: 0px;
+    right: 10px;
+   
+  }
+
+  .header-tableLibros{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+  }
+
+  .table-rowLibros{
+    padding: 10px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+  }
